@@ -1,0 +1,50 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+footer {
+  background: $c-black;
+}
+
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 27px;
+  gap: 30px;
+  width: 100%;
+
+  min-height: 60px;
+  color: $c-white;
+  @include font;
+  font-size: 12px;
+
+  @include onDesktop {
+    height: 100px;
+    font-size: 14px;
+    gap: 120px;
+    padding: 0 120px;
+  }
+
+  &__contact {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  &__link {
+    color: $c-white;
+
+    &--main {
+      font-size: 14px;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      @include onDesktop {
+        font-size: 35px;
+      }
+    }
+  }
+}

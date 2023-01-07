@@ -1,0 +1,150 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.order-menu-item {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+
+  width: 100%;
+  padding: 1px 10px;
+  background: $c-white;
+  border-radius: 8px;
+  cursor: pointer;
+
+  height: 100%;
+
+  color: $c-anthracite;
+
+  @include font;
+  font-size: 16px;
+
+  &__icon {
+    width: 15px;
+  }
+
+  &__text {
+    flex-grow: 1;
+    min-height: 46px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    font-family: $font-main;
+    font-style: normal;
+
+    &-description {
+      display: flex;
+      align-items: center;
+      font-weight: 400;
+      font-size: 16px;
+      width: 70px;
+      border-right: 1px solid $c-gray;
+    }
+
+    &-selectedItem {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+  }
+
+  &__arrow {
+    width: 9px;
+  }
+
+  @include onSmallWidth {
+    flex-direction: column;
+    padding: 10px;
+
+    &__text {
+      min-height: 0;
+      flex-direction: column;
+      justify-content: center;
+
+      &-description {
+        border: none;
+        width: auto;
+        justify-content: center;
+
+      }
+
+      &-selectedItem {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__onDesktop {
+    border-radius: 15px;
+    border-right: none;
+    padding: 0 24px 0 28px;
+
+    .order-menu-item {
+      &__icon {
+        width: 23px;
+      }
+
+      &__text {
+        min-height: 88px;
+        gap: 12px;
+        flex-direction: column;
+        justify-content: center;
+
+        &-description {
+          border-right: none;
+        }
+
+        &-selectedItem {
+          display: flex;
+          align-items: center;
+          font-weight: 700;
+          font-size: 14px;
+        }
+      }
+
+      &__arrow {
+        width: 17px;
+      }
+    }
+  }
+
+
+
+  &__dropdown {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    padding: 10px;
+    background: $c-white;
+    cursor: pointer;
+    @include borderRadius;
+    overflow-y: scroll;
+    height: 300px;
+    text-align: left;
+
+    &-item {
+      padding: 4px 4px 4px 8px;
+      border-radius: 2px;
+
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.28);
+      }
+    }
+  }
+}
+
+
+.ant-dropdown {
+  z-index: 2000;
+}

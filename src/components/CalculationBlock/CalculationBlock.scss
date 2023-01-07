@@ -1,0 +1,57 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.calculation-block {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: left;
+  padding: 10px 0 10px 17px;
+  gap: 10px;
+  flex-wrap: wrap;
+
+  background: #FFFFFF;
+  @include borderRadius;
+
+  &__img {
+    width: 22px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    @include font;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  &__title {
+    letter-spacing: 0.07px;
+    color: $c-black;
+  }
+
+  &__p {
+    letter-spacing: 0.2px;
+    color: $c-gray;
+    text-align: left;
+  }
+
+  @include onDesktop {
+    padding: 20px 0 20px 17px;
+    gap: 17px;
+
+    &__img {
+      width: 40px;
+    }
+
+    &__title {
+      font-size: 17px;
+    }
+
+    &__content {
+      font-size: 17px;
+    }
+  }
+}

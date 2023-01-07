@@ -1,0 +1,75 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.placing {
+  filter: blur(0px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+
+  width: 100%;
+
+  max-height: 90vh;
+  overflow-y: scroll;
+
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.4);
+  @include borderRadius;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 14px solid transparent;
+
+  &-success {
+    background: green;
+    text-align: center;
+    margin: 0 auto;
+    max-width: max-content;
+    font-size: 20px;
+    line-height: 1.4;
+    padding: 20px;
+    color: $c-white;
+    @include borderRadius;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 20px;
+    background: $c-white;
+    @include borderRadius;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    @include onDesktop {
+      flex-wrap: nowrap;
+    }
+
+
+    div {
+      min-width: 300px;
+      //width: 300px;
+      width: auto;
+      flex-grow: 1;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+
+    }
+
+    &-forward {
+      background: green;
+    }
+  }
+
+
+  @include onDesktop {
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+}

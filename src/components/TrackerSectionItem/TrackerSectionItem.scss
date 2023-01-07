@@ -1,0 +1,83 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.tracker_section-item {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  @include font;
+
+  &__title {
+    font-size: 36px;
+    color: $c-black;
+    text-align: center;
+
+    margin-bottom: 10px;
+  }
+
+  &__calculation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+
+    &-left {
+      flex-grow: 4;
+    }
+
+    &-right {
+      flex-grow: 1;
+    }
+  }
+
+  &__map {
+    border-radius: 5px;
+    /* box-shadow: 0 1px 4px rgb(40 41 61 / 2%), 0 8px 11px rgb(96 97 112 / 12%); */
+    min-height: 400px;
+    object-fit: contain;
+    object-position: top;
+    width: 100%;
+
+    @include borderRadius;
+  }
+
+  @include onDesktop {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 0fr 0fr 0fr 1fr;
+    align-items: stretch;
+
+    &__title {
+      height: max-content;
+    }
+
+    &__map {
+
+    }
+
+    &-col {
+      @for $start from 1 through 12 {
+        @for $end from $start through 12 {
+          &--#{$start}-#{$end} {
+            grid-column-start: #{$start};
+            grid-column-end: #{$end + 1};
+          }
+        }
+      }
+    }
+
+    &-row {
+      @for $start from 1 through 4 {
+        @for $end from $start through 4 {
+          &--#{$start}-#{$end} {
+            grid-row-start: #{$start};
+            grid-row-end: #{$end + 1};
+          }
+        }
+      }
+    }
+
+  }
+}

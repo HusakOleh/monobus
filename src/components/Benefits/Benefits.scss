@@ -1,0 +1,26 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.benefits {
+  padding: 28px 50px 54px;
+  gap: 18px;
+  display: flex;
+  justify-content: space-around;
+
+
+  &__row-container {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  @include onDesktop{
+    padding: 60px 120px;
+  }
+
+  @include onSmallWidth{
+    flex-wrap: wrap;
+  }
+}

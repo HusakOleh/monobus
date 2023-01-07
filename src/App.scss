@@ -1,0 +1,51 @@
+@import "./utils/mixins";
+@import "./utils/vars";
+
+.App {
+  text-align: center;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #3E4958 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3E4958;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+}
+
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.scale {
+  transition: transform 0.3s linear;
+
+  &:hover {
+    transform: scale(1.04);
+  }
+}
+
+.app-input {
+  border: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  @include borderRadius;
+}

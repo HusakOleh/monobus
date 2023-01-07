@@ -1,0 +1,62 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.card-contact {
+  width: 100%;
+  padding: 20px;
+  background: $c-white;
+  @include borderRadius;
+  color: $c-anthracite;
+  @include font;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  &__title {
+    width: 100%;
+    @include f-card-strong;
+  }
+
+  &__input {
+    max-width: 100%;
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+
+    &-phone {
+      flex-direction: column;
+      display: flex;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      @include borderRadius;
+      border-color: transparent;
+      resize: none;
+      //outline: 1px solid $c-gray;
+
+      &::placeholder {
+        @include font
+      }
+
+      &:focus-visible {
+        outline: 1px solid $c-gray;
+      }
+    }
+
+    &-error {
+      font-size: 12px;
+      color: red;
+      text-align: left;
+
+      &-hidden {
+        visibility: hidden;
+      }
+    }
+
+  }
+}

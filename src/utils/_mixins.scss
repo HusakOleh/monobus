@@ -1,0 +1,47 @@
+@import "./vars";
+
+@mixin hover($_property, $_toValue) {
+  transition: #{$_property} 0.3s;
+  &:hover {
+    #{$_property}: $_toValue;
+  }
+}
+
+@mixin onDesktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin onSmallWidth {
+  @media (max-width: 360px) {
+    @content;
+  }
+}
+
+@mixin font {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin f-card-strong {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: $c-black;
+}
+
+@mixin f-card-secondary {
+  font-family: $font-main;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: $c-gray;
+}
+
+@mixin borderRadius {
+  box-shadow: 0 1px 4px rgba(40, 41, 61, 0.02), 0 8px 11px rgba(96, 97, 112, 0.12);
+  border-radius: 5px;
+}

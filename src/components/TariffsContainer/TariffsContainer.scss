@@ -1,0 +1,77 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.tariffs_container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px 0 10px 17px;
+  gap: 17px;
+
+  @include borderRadius;
+
+  @include font;
+  font-size: 12px;
+  line-height: 1.4;
+
+  &__img {
+    width: 22px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+
+  &__title {
+    letter-spacing: 0.07px;
+    color: $c-black;
+  }
+
+  &__list {
+    list-style: circle;
+    margin-left: 15px;
+
+    &-item {
+      display: list-item;
+
+      @include font;
+      font-size: 12px;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      color: $c-gray;
+      text-align: left;
+    }
+  }
+
+  @include onDesktop {
+    padding: 20px 0 20px 17px;
+
+    &__img {
+      width: 40px;
+    }
+
+    &__title {
+      font-size: 17px;
+    }
+
+    &__content {
+      font-size: 17px;
+    }
+
+    &__list {
+      list-style: url('../../../public/assets/images/icons/ellipse.svg');
+      margin-left: 17px;
+
+      &-item {
+        display: list-item;
+
+        font-size: 17px;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}

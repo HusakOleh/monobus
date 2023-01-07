@@ -1,0 +1,62 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.benefits-item {
+  width: 142px;
+  height: 124px;
+  padding: 9px 9px 12px;
+  margin: 0 auto;
+  background: $c-white;
+  @include font;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  @include borderRadius;
+
+  &__img-container {
+    width: 37px;
+    height: 37px;
+    padding: 6px 2px;
+  }
+
+  &__img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 16px;
+    color: $c-black;
+  }
+
+  &__content {
+    font-size: 9px;
+    color: $c-gray;
+  }
+
+
+
+  @include onDesktop {
+    width: 182px;
+    height: 160px;
+    padding: 12px;
+
+    &__img-container {
+      width: 49px;
+      height: 49px;
+      padding: 9px 6px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__content {
+      font-size: 11px;
+    }
+  }
+}

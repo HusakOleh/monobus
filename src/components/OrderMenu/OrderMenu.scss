@@ -1,0 +1,145 @@
+@import "../../utils/mixins";
+@import "../../utils/vars";
+
+.order-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 560px;
+  margin: 0 auto;
+
+  padding: 9px;
+  background: rgba(255, 255, 255, 0.4);
+  @include borderRadius;
+  border-radius: 12px;
+  position: relative;
+
+  &-close {
+    align-self: end;
+    color: $c-white;
+    position: absolute;
+    cursor: pointer;
+    top: -30px;
+    right: -30px;
+    background-image: url("../../../public/assets/images/icons/close.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+
+    &-alert {
+      top: -50px;
+      right: -50px;
+    }
+  }
+
+  &__line-block {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    &-left {
+      flex-grow: 4;
+    }
+
+    &-right {
+      flex-grow: 1;
+    }
+
+    @include onSmallWidth {
+      &-left {
+        width: 100%;
+        flex-grow: 0;
+      }
+
+      &-right {
+        width: 100%;
+        flex-grow: 0;
+      }
+    }
+  }
+
+  &__modal {
+
+    &-window {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    &-alert {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 30vh;
+      background: $c-blue;
+      color: $c-white;
+      font-weight: bold;
+      //letter-spacing: 1rem;
+      text-align: center;
+      text-transform: uppercase;
+      border-radius: 5px;
+      outline: 30px solid rgba(255, 255, 255, 0.4);
+      font-size: 28px;
+    }
+  }
+
+  &__onDesktop {
+    flex-direction: row;
+    gap: 0;
+    padding: 30px 20px;
+    width: 100%;
+    max-width: 100%;
+    justify-content: space-between;
+
+    .order-menu {
+      &__item-wrap {
+        flex-grow: 1;
+        border-right: 1px solid $c-gray;
+        background: $c-white;
+
+        &:first-child {
+          border-radius: 15px 0 0 15px;
+        }
+      }
+
+      &__line-block {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 0;
+        margin-right: 10px;
+
+        flex-grow: 2;
+
+
+        &-left {
+          flex-grow: 0;
+          width: 100%;
+          border-right: 1px solid $c-gray;
+          background: $c-white;
+        }
+
+        &-right {
+          flex-grow: 0;
+          width: 100%;
+
+          background: $c-white;
+          border-radius: 0 15px 15px 0;
+        }
+      }
+
+      &__button {
+        overflow: hidden;
+        border-radius: 15px;
+        height: 100%;
+      }
+    }
+  }
+}
+
+

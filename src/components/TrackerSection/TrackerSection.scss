@@ -1,0 +1,22 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.tracker-section {
+  padding: 12px 50px 62px;
+
+  &__wrap {
+    margin: 22px 0;
+  }
+
+  @include onDesktop {
+    padding: 0 75px 100px;
+
+    &__wrap {
+      padding: 60px 0 90px;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid $c-gray;
+      }
+    }
+  }
+}

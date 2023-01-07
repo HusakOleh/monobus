@@ -1,0 +1,55 @@
+@import '../../utils/vars';
+@import '../../utils/mixins';
+
+.departure-list-item {
+  @include font;
+  font-size: 12px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: $c-black;
+  text-align: left;
+
+  &--gray {
+    color: $c-gray;
+  }
+
+  &--desktop {
+    font-size: 12px;
+    letter-spacing: 0.4px;
+    position: relative;
+    padding: 7px 0 9px;
+
+    &::after {
+      display: block;
+      position: absolute;
+      content: '';
+      height: 11px;
+      width: 11px;
+
+      top: 19px;
+      left: -16px;
+
+      background-image: url('../../../public/assets/images/icons/ellipse.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $c-gray;
+
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        height: 100%;
+
+        top: 22px;
+        left: -11.5px;
+
+        width: 2px;
+        background: $c-gray;
+      }
+    }
+  }
+}

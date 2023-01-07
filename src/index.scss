@@ -1,0 +1,8 @@
+@import "./src/utils/fonts";
+@import "./src/utils/vars";
+
+body {
+  margin: 0;
+  font-family: $font-main, sans-serif !important;
+}
+
