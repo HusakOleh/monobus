@@ -65,6 +65,7 @@ export const Placing = ({
       const adminID = {
         denys: 961690224,
         karina: 5711463553,
+        admin3: 5845744569,
 
         nicol: 402275387,
         oleh: 5626126417,
@@ -98,6 +99,7 @@ export const Placing = ({
         const CHAT_ARRAY = [
           {chat_id: adminID.denys},
           {chat_id: adminID.karina},
+          {chat_id: adminID.admin3},
           // {chat_id: adminID.oleh2},
           // {chat_id: adminID.oleh},
           // {chat_id: adminID.nicol},
