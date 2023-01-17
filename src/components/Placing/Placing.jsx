@@ -67,10 +67,10 @@ export const Placing = ({
         karina: 5711463553,
         admin3: 5845744569,
 
-        nicol: 402275387,
-        oleh: 5626126417,
-        oleh2: 257497939,
-        danilo: 676244499
+        // nicol: 402275387,
+        // oleh: 5626126417,
+        // oleh2: 257497939,
+        // danilo: 676244499
       }
 
       const BOT_APIKEY = process.env.REACT_APP_TELEGRAM_APIKEY;

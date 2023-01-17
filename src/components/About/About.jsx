@@ -37,6 +37,42 @@ export const About = () => {
         </li>
       </ul>
 
+      <ul className="about__contacts">
+        Зв'язок з диспетчером:
+        <li className="about__contacts-item">
+          <a
+            href="tel:+38 (066) 270-69-90"
+            className="footer__link"
+          >
+            +380733706990
+          </a>
+        </li>
+        <li className="about__contacts-item">
+          <a
+            href="tel:+38 (066) 270-69-90"
+            className="footer__link"
+          >
+            +380963706990
+          </a>
+        </li>
+        <li className="about__contacts-item">
+          <a
+            href="tel:+38 (066) 270-69-90"
+            className="footer__link"
+          >
+            +380993706990
+          </a>
+        </li>
+        <li className="about__contacts-item">
+          <a
+            href="tel:+38 (066) 270-69-90"
+            className="footer__link"
+          >
+            +380662706990
+          </a>
+        </li>
+      </ul>
+
       <div className="about__button">
         <Button
           content="Замовити квиток"
@@ -60,9 +96,6 @@ export const About = () => {
           </div>
         </Modal>
       </div>
-
-
-
     </section>
   );
 };

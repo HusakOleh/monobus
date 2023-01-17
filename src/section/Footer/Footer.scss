@@ -17,14 +17,7 @@ footer {
   min-height: 60px;
   color: $c-white;
   @include font;
-  font-size: 12px;
-
-  @include onDesktop {
-    height: 100px;
-    font-size: 14px;
-    gap: 120px;
-    padding: 0 120px;
-  }
+  font-size: 14px;
 
   &__contact {
     display: flex;
@@ -38,11 +31,22 @@ footer {
     color: $c-white;
 
     &--main {
-      font-size: 14px;
+      font-size: 16px;
       text-transform: uppercase;
       cursor: pointer;
+    }
+  }
 
-      @include onDesktop {
+
+  @include onDesktop {
+    height: 100px;
+    font-size: 16px;
+    gap: 120px;
+    padding: 0 120px;
+
+    &__link {
+
+      &--main {
         font-size: 35px;
       }
     }

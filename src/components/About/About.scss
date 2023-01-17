@@ -16,14 +16,15 @@
   &__title {
     font-size: 22px;
     line-height: 1.2;
-    text-align: center;
+    //text-align: center;
+    text-align: left;
   }
 
   &__content {
     font-size: 12px;
     line-height: 1.5;
-    text-align: center;
-
+    //text-align: center;
+    text-align: left;
     margin-top: 18px;
   }
 
@@ -34,6 +35,13 @@
     line-height: 1.33;
     list-style-type: disc;
     padding-left: 25px;
+  }
+
+  &__contacts {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.6;
   }
 
   &__button {
@@ -75,6 +83,12 @@
     &__list {
       font-size: 25px;
       line-height: 2;
+    }
+
+    &__contacts {
+      font-size: 25px;
+      line-height: 2;
+      //text-align: left;
     }
 
     &__button {
