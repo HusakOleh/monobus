@@ -17,7 +17,9 @@ export const Placing = ({
   const [isBooked, setIsBooked] = useState(false);
   const [selectRt, setSelectRt] = useState(0);
 
-  const [final, setFinal] = useState(false)
+  const [final, setFinal] = useState(false);
+
+  // console.log(routeInfo);
 
   const [pasInfo, setPasInfo] = useState({});
   const passengersInfo = (key, newValue) => {
@@ -47,14 +49,20 @@ export const Placing = ({
   const [correctPhone, setCorrectPhone] = useState(true)
 
   const onSubmit = () => {
+    const rt = routesFiltered.find(el => el.routeID === selectRt);
+    const rtStation = rt.stations.find(el => el.cityInfo.city === firstItem);
+    const departureTime = rtStation.departure;
+
     const orderInfo = {
       ...pasInfo,
       ...cusInfo,
       selectRt,
       from: firstItem,
       to: secondItem,
-      date: routeInfo.date.format('DD/MM/YYYY')
+      date: routeInfo.date.format('DD/MM/YYYY'),
+      time: departureTime,
     }
+
 
     const phone = orderInfo.phone.replace(/\s/g, "");
 
@@ -81,8 +89,10 @@ export const Placing = ({
       let mPhone = `☎️ : ${phone}%0A`
       let mMail = orderInfo.email ? `📫 : ${orderInfo.email}%0A` : '';
       let mNote = orderInfo.note ? `🖋 : ${orderInfo.note}%0A` : '';
-      let mDate = `📆 : ${orderInfo.date}%0A`;
+      let mDate = `📆 : ${orderInfo.date}%0A`
+      let mTime = `🕒 : ${orderInfo.time}%0A`;
       let mPrice = `💵 : ${price} грн.%0A`;
+
 
       let mPasInfo = "%0A";
 
@@ -92,7 +102,7 @@ export const Placing = ({
           mPasInfo = mPasInfo + `👤Пасажир ${i + 1}:%0A        Фамілія: ${orderInfo[pas].surname}%0A        Ім'я: ${orderInfo[pas].name}%0A`;
         });
 
-      let messageData = `${mRoute}${mFrom}${mTo}${mPrice}${mDate}%0A${mPhone}${mMail}${mNote}${mPasInfo}`;
+      let messageData = `${mRoute}${mFrom}${mTo}${mPrice}${mDate}${mTime}%0A${mPhone}${mMail}${mNote}${mPasInfo}`;
 
       let api = new XMLHttpRequest();
       try {
@@ -100,6 +110,7 @@ export const Placing = ({
           {chat_id: adminID.denys},
           {chat_id: adminID.karina},
           {chat_id: adminID.admin3},
+
           // {chat_id: adminID.oleh2},
           // {chat_id: adminID.oleh},
           // {chat_id: adminID.nicol},
